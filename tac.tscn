@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dqe2l435vk81a"]
+
+[ext_resource type="Texture2D" uid="uid://dx4hwl6gx35ym" path="res://Tac.png" id="1_u40ra"]
+
+[node name="Tac" type="Sprite2D"]
+position = Vector2(32, 32)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("1_u40ra")

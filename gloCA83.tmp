@@ -1,0 +1,83 @@
+[gd_scene load_steps=3 format=3 uid="uid://le281qrr4ijb"]
+
+[ext_resource type="Script" path="res://Turn.gd" id="1_fkdu0"]
+[ext_resource type="Script" path="res://Buttons.gd" id="1_gackq"]
+
+[node name="global" type="Node2D"]
+
+[node name="Buttons" type="Node" parent="."]
+script = ExtResource("1_gackq")
+
+[node name="X1Y1" type="Button" parent="Buttons"]
+visible = false
+offset_left = 312.0
+offset_top = 184.0
+offset_right = 376.0
+offset_bottom = 248.0
+
+[node name="X2Y1" type="Button" parent="Buttons"]
+visible = false
+offset_left = 384.0
+offset_top = 184.0
+offset_right = 448.0
+offset_bottom = 248.0
+
+[node name="X3Y1" type="Button" parent="Buttons"]
+visible = false
+offset_left = 456.0
+offset_top = 184.0
+offset_right = 520.0
+offset_bottom = 248.0
+
+[node name="X1Y2" type="Button" parent="Buttons"]
+visible = false
+offset_left = 312.0
+offset_top = 256.0
+offset_right = 376.0
+offset_bottom = 320.0
+
+[node name="X2Y2" type="Button" parent="Buttons"]
+visible = false
+offset_left = 384.0
+offset_top = 256.0
+offset_right = 448.0
+offset_bottom = 320.0
+
+[node name="X3Y2" type="Button" parent="Buttons"]
+visible = false
+offset_left = 456.0
+offset_top = 256.0
+offset_right = 520.0
+offset_bottom = 320.0
+
+[node name="X1Y3" type="Button" parent="Buttons"]
+visible = false
+offset_left = 312.0
+offset_top = 328.0
+offset_right = 376.0
+offset_bottom = 392.0
+
+[node name="X2Y3" type="Button" parent="Buttons"]
+visible = false
+offset_left = 384.0
+offset_top = 328.0
+offset_right = 448.0
+offset_bottom = 392.0
+
+[node name="X3Y3" type="Button" parent="Buttons"]
+visible = false
+offset_left = 456.0
+offset_top = 328.0
+offset_right = 520.0
+offset_bottom = 392.0
+
+[node name="Turn" type="Label" parent="."]
+offset_left = 640.0
+offset_top = 232.0
+offset_right = 695.0
+offset_bottom = 255.0
+text = "Turn"
+script = ExtResource("1_fkdu0")
+
+[connection signal="pressed" from="Buttons/X1Y1" to="Buttons" method="_on_x_1y_1_pressed"]
+[connection signal="pressed" from="Buttons/X2Y1" to="Buttons" method="_on_x_2y_1_pressed"]

@@ -12,7 +12,7 @@ func _ready():
 	pass
 	
 func _on_pressed():
-	if !assigned:
+	if !assigned && Turn.winner == -1:
 		assigned = true
 		_tic_or_tac()
 		

@@ -10,7 +10,7 @@ func _ready():
 		for j in range(n):
 			var temp = but.instantiate()
 			temp.position = Vector2(320 + i * 70 ,270 + j * 70)
-			temp.x = i
+			temp.x = i + n * 4
 			temp.y = j
 			temp.id = temp.x + temp.y * n + 1
 			add_child(temp)

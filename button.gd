@@ -7,7 +7,6 @@ var id = -1
 var x = -1
 var y = -1
 
-
 func _on_pressed():
 	if !assigned:
 		assigned = true
@@ -20,12 +19,12 @@ func _tic_or_tac():
 		var temp = toe.instantiate()
 		$".".add_child(temp)
 		Game.player1.append(id)
-		Game.player1y.append(y)
+		Game.player1.append(y)
 	else:
 		var temp = tac.instantiate()
 		$".".add_child(temp)
 		Game.player2.append(id)
-		Game.player2y.append(y)
+		Game.player2.append(y)
 	Turn.turn_number += 1
 	Game.check_winner()
 	print(Game.player1)

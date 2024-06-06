@@ -24,8 +24,8 @@ func check_vertical(index, list):
 	var check1 = list[index].get_id() + size
 	var check2 = list[index].get_id() + size*2
 	var ycheck = list[index].get_y()
-	var coor1 = Coordinate.new(check1, ycheck)
-	var coor2 = Coordinate.new(check2, ycheck)
+	var coor1 = Coordinate.new(check1, ycheck + 1)
+	var coor2 = Coordinate.new(check2, ycheck + 2)
 	return search(coor1,list) && search(coor2,list)
 
 func check_diagonal(index, list):

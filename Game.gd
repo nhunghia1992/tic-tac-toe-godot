@@ -56,3 +56,8 @@ func search(coor, list):
 		if i.get_id() == coor.get_id() && i.get_y() == coor.get_y():
 			return true
 	return false
+	
+func wrestart():
+	player1.clear()
+	player2.clear()
+	

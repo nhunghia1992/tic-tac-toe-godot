@@ -1,8 +1,8 @@
 [gd_scene load_steps=2 format=3 uid="uid://d3j346m7ecnys"]
 
-[ext_resource type="Texture2D" uid="uid://bntbtxc1j72js" path="res://Toe.png" id="1_s3psb"]
+[ext_resource type="Texture2D" uid="uid://dk2fl0y21my2w" path="res://Sprites/Toe.png" id="1_hcmbg"]
 
 [node name="Toe" type="Sprite2D"]
 position = Vector2(32, 32)
 scale = Vector2(0.75, 0.75)
-texture = ExtResource("1_s3psb")
+texture = ExtResource("1_hcmbg")

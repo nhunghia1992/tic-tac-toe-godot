@@ -6,6 +6,10 @@ var but = preload("res://button.tscn")
 var n = Game.size
 
 func _ready():
+	create()
+		
+	
+func create():
 	for i in range(n):
 		for j in range(n):
 			var temp = but.instantiate()
@@ -14,5 +18,13 @@ func _ready():
 			temp.y = j
 			temp.id = temp.x + temp.y * n + 1
 			add_child(temp)
-		
-	
+
+func restart():
+	pass
+func _on_restart_button_pressed():
+	propagate_call("restart", [] , false)
+	Game.player1.clear()
+	Game.player2.clear()
+	Turn.turn_number = 1
+	Turn.winner = -1
+	create()

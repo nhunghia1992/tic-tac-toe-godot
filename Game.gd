@@ -5,63 +5,48 @@ var player2 = []
 
 func check_winner():
 	for i in range(player1.size()):
-		var isId = i%2 == 0
-		if isId:
-			if (check_horizontal(i,player1) || check_diagonal(i,player1) || check_vertical(i,player1) || check_reverse_diagonal(i,player1)):
-				Turn.winner = 1
+		player1[i].info()
+		if (check_horizontal(i,player1) || check_diagonal(i,player1) || check_vertical(i,player1) || check_reverse_diagonal(i,player1)):
+			Turn.winner = 1
 	for i in range(player2.size()):
-		var isId = i%2 == 0
-		if isId:
-			if (check_horizontal(i,player2) || check_diagonal(i,player2) || check_vertical(i,player2) || check_reverse_diagonal(i,player2)):
-				Turn.winner = 2
+		if (check_horizontal(i,player2) || check_diagonal(i,player2) || check_vertical(i,player2) || check_reverse_diagonal(i,player2)):
+			Turn.winner = 2
 
 func check_horizontal(index, list):
-	var flag1 = false
-	var check1 = list[index] + 1
-	var check2 = list[index] + 2
-	if check1 in list && check2 in list:
-		flag1 = true
-	if flag1 == true:
-		var yindex1 = list.find(check1) + 1
-		var yindex2 = list.find(check2) + 1
-		var rowcheck = list[yindex1] == list[index + 1] && list[index + 1] == list[yindex2] && list[yindex1] == list[yindex2]
-		if rowcheck:
-			return true
-	else:
-		return false
+	var check1 = list[index].get_id() + 1
+	var check2 = list[index].get_id() + 2
+	var ycheck = list[index].get_y()
+	var coor1 = Coordinate.new(check1, ycheck)
+	var coor2 = Coordinate.new(check2, ycheck)
+	return search(coor1,list) && search(coor2,list)
 		
 func check_vertical(index, list):
-	if list[index] + size in list && list[index] + size*2 in list:
-		return true
-	else:
-		return false
+	var check1 = list[index].get_id() + size
+	var check2 = list[index].get_id() + size*2
+	var ycheck = list[index].get_y()
+	var coor1 = Coordinate.new(check1, ycheck)
+	var coor2 = Coordinate.new(check2, ycheck)
+	return search(coor1,list) && search(coor2,list)
 
 func check_diagonal(index, list):
-	var flag1 = false
-	var check1 = list[index] + size + 1
-	var check2 = list[index] + 2 * size + 2
-	if check1 in list && check2 in list:
-		flag1 = true
-	if flag1 == true:
-		var yindex1 = list.find(check1) + 1
-		var yindex2 = list.find(check2) + 1
-		if list[yindex1] != list[index] && list[index] != list[yindex2] && list[yindex1] != list[yindex2]:
-			return true
-	else: 
-		return false
-		
+	var check1 = list[index].get_id() + size + 1
+	var check2 = list[index].get_id() + 2 * size + 2
+	var ycheck = list[index].get_y()
+	var coor1 = Coordinate.new(check1, ycheck+1)
+	var coor2 = Coordinate.new(check2, ycheck+2)
+	return search(coor1,list) && search(coor2,list)
 
 		
 func check_reverse_diagonal(index, list):
-	var flag1 = false
-	var check1 = list[index] + size - 1
-	var check2 = list[index] + 2 * size - 2
-	if check1 in list && check2 in list:
-		flag1 = true
-	if flag1 == true:
-		var yindex1 = list.find(check1) + 1
-		var yindex2 = list.find(check2) + 1
-		if list[yindex1] != list[index] && list[index] != list[yindex2] && list[yindex1] != list[yindex2]:
+	var check1 = list[index].get_id() + size - 1
+	var check2 = list[index].get_id() + 2 * size - 2
+	var ycheck= list[index].get_y()
+	var coor1 = Coordinate.new(check1, ycheck+1)
+	var coor2 = Coordinate.new(check2, ycheck+2)
+	return search(coor1,list) && search(coor2,list)
+
+func search(coor, list):
+	for i in list:
+		if i.get_id() == coor.get_id() && i.get_y() == coor.get_y():
 			return true
-	else: 
-		return false
+	return false

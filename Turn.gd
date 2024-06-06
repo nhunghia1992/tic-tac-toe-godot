@@ -7,7 +7,9 @@ func _ready():
 
 
 func _process(_delta):
-	if winner == -1:
+	if winner == -1 && turn_number <= pow(Game.size,2):
 		text = "Turn " + str(turn_number) 
+	elif turn_number > pow(Game.size, 2):
+		text = "Draw"
 	else:
 		text = "Player " + str(winner) + " wins" 

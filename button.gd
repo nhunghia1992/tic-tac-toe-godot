@@ -31,7 +31,10 @@ func _tic_or_tac():
 		coor.cid = id
 		coor.cy = y
 		Game.player2[id] = coor
-	Game.check_winner()
+	var is_win = Game.check_winner()
+	if is_win != -1:
+		Turn.winner = is_win
+		get_parent().create_highlight(Game.winning_move)
 	Turn.turn_number += 1
 	
 func add_highlight():
@@ -39,7 +42,10 @@ func add_highlight():
 	$".".add_child(highlight_temp)
 	
 func restart():
-	queue_free()
+	var children = get_children()
+	for i in children:
+		i.queue_free()
+	assigned = false
 #Game.player1.append({x: x, y: y}
 #listmove = player1.filter(move => move.x == x && move.y === y)
 #listmove.lenngth === wincondiion

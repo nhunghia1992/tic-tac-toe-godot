@@ -9,10 +9,10 @@ var children = []
 func _ready():
 	create()
 	
-	
+
 func create():
-	for i in range(n):
-		for j in range(n):
+	for j in range(n):
+		for i in range(n):
 			var temp = but.instantiate()
 			temp.position = Vector2(320 + i * 70 ,270 + j * 70)
 			temp.x = i 
@@ -23,15 +23,20 @@ func create():
 
 func restart():
 	pass
+
 func _on_restart_button_pressed():
 	propagate_call("restart", [] , false)
 	Game.player1.clear()
 	Game.player2.clear()
 	Game.player1.resize(Game.max_id)
 	Game.player2.resize(Game.max_id)
+	Game.winning_move.clear()
 	Turn.turn_number = 1
 	Turn.winner = -1
 	Turn.game_condition = "Undecided"
 	Turn.timeP1 = 0.0
 	Turn.timeP2 = 0.0
-	create()
+
+func create_highlight(list):
+	for i in list:
+		children[i].add_highlight()

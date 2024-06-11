@@ -2,6 +2,7 @@ extends Button
 var tac = preload("res://tac.tscn")
 var toe = preload("res://toe.tscn")
 var turn = preload("res://Turn.gd")
+var highlighter = preload("res://highlight.tscn")
 var assigned = false
 var id = -1
 var x = -1
@@ -33,7 +34,9 @@ func _tic_or_tac():
 	Game.check_winner()
 	Turn.turn_number += 1
 	
-	
+func add_highlight():
+	var highlight_temp = highlighter.instantiate()
+	$".".add_child(highlight_temp)
 	
 func restart():
 	queue_free()

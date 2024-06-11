@@ -4,10 +4,11 @@ var tac = preload("res://tac.tscn")
 var toe = preload("res://toe.tscn")
 var but = preload("res://button.tscn")
 var n = Game.size
+var children = []
 
 func _ready():
 	create()
-		
+	
 	
 func create():
 	for i in range(n):
@@ -18,6 +19,7 @@ func create():
 			temp.y = j
 			temp.id = temp.x + temp.y * n
 			add_child(temp)
+	children = $".".get_children()
 
 func restart():
 	pass

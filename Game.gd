@@ -4,7 +4,6 @@ var win_condition = 3
 var player1 = []
 var player2 = []
 var max_id = pow(size,2)
-
 func _ready():
 	player1.resize(max_id)
 	player2.resize(max_id)

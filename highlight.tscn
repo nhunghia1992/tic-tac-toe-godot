@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cspicqhd64lwu"]
+
+[ext_resource type="Texture2D" uid="uid://bnxbxevrulhvy" path="res://Sprites/highlight.png" id="1_2cla4"]
+
+[node name="Highlight" type="Sprite2D"]
+show_behind_parent = true
+position = Vector2(32, 32)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("1_2cla4")

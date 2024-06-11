@@ -29,4 +29,7 @@ func _on_restart_button_pressed():
 	Game.player2.resize(Game.max_id)
 	Turn.turn_number = 1
 	Turn.winner = -1
+	Turn.game_condition = "Undecided"
+	Turn.timeP1 = 0.0
+	Turn.timeP2 = 0.0
 	create()

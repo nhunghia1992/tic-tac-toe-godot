@@ -23,15 +23,17 @@ func _tic_or_tac():
 		$".".add_child(temp)
 		coor.cid = id
 		coor.cy = y
-		Game.player1.append(coor)
+		Game.player1[id] = coor
 	else:
 		var temp = tac.instantiate()
 		$".".add_child(temp)
 		coor.cid = id
 		coor.cy = y
-		Game.player2.append(coor)
-	Turn.turn_number += 1
+		Game.player2[id] = coor
 	Game.check_winner()
+	Turn.turn_number += 1
+	
+	
 	
 func restart():
 	queue_free()

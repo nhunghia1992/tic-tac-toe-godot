@@ -14,9 +14,9 @@ func create():
 		for j in range(n):
 			var temp = but.instantiate()
 			temp.position = Vector2(320 + i * 70 ,270 + j * 70)
-			temp.x = i + n * 4
+			temp.x = i 
 			temp.y = j
-			temp.id = temp.x + temp.y * n + 1
+			temp.id = temp.x + temp.y * n
 			add_child(temp)
 
 func restart():
@@ -25,6 +25,8 @@ func _on_restart_button_pressed():
 	propagate_call("restart", [] , false)
 	Game.player1.clear()
 	Game.player2.clear()
+	Game.player1.resize(Game.max_id)
+	Game.player2.resize(Game.max_id)
 	Turn.turn_number = 1
 	Turn.winner = -1
 	create()

@@ -1,6 +1,7 @@
 extends Label
 var turn_number = 1
 var winner = -1
+var something = false
 
 func _ready():
 	Turn.position = Vector2(640,256)

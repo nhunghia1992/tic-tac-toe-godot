@@ -14,7 +14,7 @@ func create():
 	for j in range(n):
 		for i in range(n):
 			var temp = but.instantiate()
-			temp.position = Vector2(192 + i * 70 ,128 + j * 70)
+			temp.position = Vector2(256 + i * 70 ,16 + j * 70)
 			temp.x = i 
 			temp.y = j
 			temp.id = temp.x + temp.y * n

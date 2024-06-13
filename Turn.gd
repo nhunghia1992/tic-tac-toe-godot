@@ -5,6 +5,8 @@ var game_condition = "Undecided"
 var timeP1 = 0.0
 var timeP2 = 0.0
 var current_scene = "menu"
+var P1name = "Player 1"
+var P2name = "Player 2"
 
 
 func _ready():
@@ -14,8 +16,10 @@ func change_current_scene(scene_name):
 	current_scene = scene_name
 
 func change_text(delta):
-	if winner != -1:
-		game_condition = "Player " + str(winner) + " wins"
+	if winner == 1:
+		game_condition = P1name + " " + " wins"
+	elif winner == 2:
+		game_condition = P2name + " " + " wins"
 	elif turn_number > Game.max_id:
 		game_condition = "Draw"
 	
@@ -26,7 +30,7 @@ func change_text(delta):
 	var timeP1_rounded = round(timeP1)
 	var timeP2_rounded = round(timeP2)
 	
-	var players_info =  '\n' + "Player 1: " + str(timeP1_rounded) + '\n' + "Player 2: " + str(timeP2_rounded)
+	var players_info =  '\n' + P1name + ": " + str(timeP1_rounded) + '\n' + P2name + ": " + str(timeP2_rounded)
 	
 	if game_condition == "Undecided":
 		text = "Turn " + str(turn_number)  + players_info

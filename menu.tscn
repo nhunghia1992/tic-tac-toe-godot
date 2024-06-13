@@ -35,6 +35,34 @@ offset_right = 672.0
 offset_bottom = 512.0
 text = "Quit"
 
+[node name="P1Name" type="TextEdit" parent="."]
+offset_left = 16.0
+offset_top = 272.0
+offset_right = 192.0
+offset_bottom = 320.0
+
+[node name="P2Name" type="TextEdit" parent="."]
+offset_left = 16.0
+offset_top = 384.0
+offset_right = 192.0
+offset_bottom = 432.0
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 40.0
+offset_top = 232.0
+offset_right = 176.0
+offset_bottom = 264.0
+text = "Player 1's name:"
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 40.0
+offset_top = 344.0
+offset_right = 176.0
+offset_bottom = 376.0
+text = "Player 2's name:"
+
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
+[connection signal="text_changed" from="P1Name" to="." method="_on_p_1_name_text_changed"]
+[connection signal="text_changed" from="P2Name" to="." method="_on_p_2_name_text_changed"]

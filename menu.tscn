@@ -1,0 +1,40 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7bqn5kxir3dv"]
+
+[ext_resource type="Script" path="res://menu.gd" id="1_o2ebu"]
+
+[node name="Menu" type="Node2D"]
+script = ExtResource("1_o2ebu")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 224.0
+offset_top = 64.0
+offset_right = 929.0
+offset_bottom = 123.0
+theme_override_font_sizes/font_size = 43
+text = "The Simpliest Game of Tic-Tac-Toe"
+max_lines_visible = 1
+
+[node name="Play" type="Button" parent="."]
+offset_left = 480.0
+offset_top = 168.0
+offset_right = 672.0
+offset_bottom = 256.0
+text = "Play"
+
+[node name="Options" type="Button" parent="."]
+offset_left = 480.0
+offset_top = 296.0
+offset_right = 672.0
+offset_bottom = 384.0
+text = "Options"
+
+[node name="Quit" type="Button" parent="."]
+offset_left = 480.0
+offset_top = 424.0
+offset_right = 672.0
+offset_bottom = 512.0
+text = "Quit"
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

@@ -1,9 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://le281qrr4ijb"]
+[gd_scene load_steps=5 format=3 uid="uid://le281qrr4ijb"]
 
 [ext_resource type="Script" path="res://Buttons.gd" id="1_gackq"]
+[ext_resource type="Script" path="res://global.gd" id="1_pw6p5"]
 [ext_resource type="Texture2D" uid="uid://cirbonxlp5f6n" path="res://Sprites/restart_button.png" id="2_jwebr"]
+[ext_resource type="Texture2D" uid="uid://bnjvuq7amgm4p" path="res://Sprites/Home.png" id="3_w0ecr"]
 
 [node name="global" type="Node2D"]
+script = ExtResource("1_pw6p5")
 
 [node name="Buttons" type="Node" parent="."]
 script = ExtResource("1_gackq")
@@ -21,5 +24,17 @@ texture = ExtResource("2_jwebr")
 
 [node name="DeleteNode" type="Node" parent="."]
 
+[node name="Menu" type="Button" parent="."]
+offset_left = 96.0
+offset_top = 16.0
+offset_right = 160.0
+offset_bottom = 80.0
+
+[node name="Home" type="Sprite2D" parent="Menu"]
+position = Vector2(32, 32)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("3_w0ecr")
+
 [connection signal="pressed" from="RestartButton" to="Buttons" method="_on_restart_button_pressed"]
 [connection signal="pressed" from="RestartButton" to="RestartButton" method="_on_pressed"]
+[connection signal="pressed" from="Menu" to="." method="_on_menu_pressed"]

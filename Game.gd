@@ -9,6 +9,15 @@ var winning_move = []
 func _ready():
 	player1.resize(max_id)
 	player2.resize(max_id)
+	
+
+func change_settings(new_size, new_win_condition):
+	size = new_size
+	win_condition = new_win_condition
+	max_id = pow(new_size,2)
+	player1.resize(max_id)
+	player2.resize(max_id)
+	print(max_id)
 
 func check_winner():
 	var winner = -1

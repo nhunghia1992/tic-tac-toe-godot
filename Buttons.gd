@@ -14,7 +14,7 @@ func create():
 	for j in range(n):
 		for i in range(n):
 			var temp = but.instantiate()
-			temp.position = Vector2(320 + i * 70 ,270 + j * 70)
+			temp.position = Vector2(192 + i * 70 ,128 + j * 70)
 			temp.x = i 
 			temp.y = j
 			temp.id = temp.x + temp.y * n
@@ -22,10 +22,6 @@ func create():
 	children = $".".get_children()
 
 func restart():
-	pass
-
-func _on_restart_button_pressed():
-	propagate_call("restart", [] , false)
 	Game.player1.clear()
 	Game.player2.clear()
 	Game.player1.resize(Game.max_id)
@@ -36,6 +32,10 @@ func _on_restart_button_pressed():
 	Turn.game_condition = "Undecided"
 	Turn.timeP1 = 0.0
 	Turn.timeP2 = 0.0
+
+func _on_restart_button_pressed():
+	propagate_call("restart", [] , false)
+	
 
 func create_highlight(list):
 	for i in list:
